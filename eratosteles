@@ -1,0 +1,32 @@
+#include<iostream>
+#include<stdlib.h>
+#include<time.h>
+using namespace std;
+void Llenarunos(int primo[],int n);
+void TacharMultiplos(int primo[],int n);
+void Mostrar(int primo[],int n);
+int main(){
+	int primo[1000];
+	Llenarunos(primo,1000);
+	TacharMultiplos(primo,1000);
+	Mostrar(primo,1000);
+}
+void Llenarunos(int primo[],int n){
+	for(int i=0;i<n;i++){
+	   primo[i]=1;	
+	}
+}
+void TacharMultiplos(int primo[],int n){
+	for(int i=2;i<n;i++){
+		for(int j=2;i*j<n;j++){
+			primo[i*j]=0;
+		}
+	}
+}
+void Mostrar(int primo[],int n){
+	for(int i=2;i<n;i++){
+		if(primo[i])//solo muestra los positivos 1
+		cout<<i<<" ";
+	}
+	cout<<"\n";
+}
